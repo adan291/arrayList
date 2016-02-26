@@ -43,7 +43,7 @@ public class ArrayListInt
     public void addElementoPosicion (int index, int elemento)
     {
         int[] newList = new int[collection.length + 1]; 
-        if(index < collection.length)
+        if(index < collection.length && index>= 0)
         {
             //guardado de elementos en las posiciones anteriores a la indicada
             for (int i = 0;   i != index; i++ )
@@ -71,14 +71,14 @@ public class ArrayListInt
     {
         collection = new int[0];
     }
-    
+
     /**
      * Metodo que devuelve true si la colección contiene ese elemento.
      */
     public boolean contains(int  elemento)
     { boolean contains = false;
         //recorrido en busca del elemento
-        for (int index = 0; index < collection.length; index++ )
+        for (int index = 0; index < collection.length && !contains; index++ )
         {
             if (collection[index]==  elemento)
             {
@@ -87,5 +87,21 @@ public class ArrayListInt
         }
         return contains;
     }
-
+     /**
+     * devuelve el elemento existente en la indice indicado.
+     * -1 si la posicion no es correcta
+     */
+    public int get(int index)
+    {
+        int num; //variable numerica
+        if(index < collection.length && index>= 0)//Si el numero es menor que la coleccion
+        {
+            num = collection[index];//num tiene el numero de la collecion
+        }
+        else
+        {
+            num = -1;//sino restamos 1
+        }	
+        return num;
+    }
 }
