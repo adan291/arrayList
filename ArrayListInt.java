@@ -161,5 +161,12 @@ public class ArrayListInt
         }
         return isEmpty;
     }
-
+       /**
+     * Metodo que devuelve el número de elementos de la colección.
+     */
+    public int size()
+    {
+        return collection.length;
+    }
+}
 }
