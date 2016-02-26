@@ -20,20 +20,20 @@ public class ArrayListInt
     /**
      * Metodo añade un elemento a la colección al final de la misma.
      */
-    public void add (int elemento)
+    public void add (int element)
     {
 
         //nueva lista creada
         int[] newList = new int[collection.length + 1];
-        //copiado de lista antigua en la nueva
+        //Copiamos de la lista antigua a la nueva
         for (int index = 0; index < collection.length; index++ )
         {
             newList[index] = collection[index];
         }
-        //agregado de nuevo elemento en la nueva lista
-        newList[collection.length] = elemento;
+        //Metemos el elemento nuevo en la lista nueva
+        newList[collection.length] = element;
 
-        //guardado de la nueva lista
+        //Guardamos la lista nueva
         collection = newList;
 
     }
@@ -41,25 +41,25 @@ public class ArrayListInt
     /**
      * Metodo añade un elemento a la colección en la posición especificada por el parámetro.
      */
-    public void add (int index, int elemento)
+    public void add (int index, int element)
     {
         int[] newList = new int[collection.length + 1]; 
         if(index < collection.length && index>= 0)
         {
-            //guardado de elementos en las posiciones anteriores a la indicada
+            //Guardamos los elementos en las posiciones indicadas a las anteriores
             for (int i = 0;   i != index; i++ )
             {
                 newList[i] = collection[i];
             }
-            //insercion de nuevo elemento en la posicion indicada
-            newList[index] = elemento;
-            //agregado de elementos despues de la posicion indicada
+            //Metemos el nuevo elemento en la posicion indicada
+            newList[index] = element;
+            //Metemos el elemento despues de la posicion indicada
             for (int i = index; i < collection.length;  i++ )
             {
                 newList[i  + 1] = collection[i];
             }
 
-            //guardado de la nueva lista
+            //Guardamos la lista nueva
             collection = newList;
         }
 
@@ -76,12 +76,12 @@ public class ArrayListInt
     /**
      * Metodo que devuelve true si la colección contiene ese elemento.
      */
-    public boolean contains(int  elemento)
+    public boolean contains(int  element)
     { boolean contains = false;
-        //recorrido en busca del elemento
+        //Recorremos en busca del elemento
         for (int index = 0; index < collection.length && !contains; index++ )
         {
-            if (collection[index]==  elemento)
+            if (collection[index] ==  element)//Si la coleccion contiene ese elemento
             {
                 contains = true;
             }
@@ -95,10 +95,10 @@ public class ArrayListInt
      */
     public int get(int index)
     {
-        int num; //variable numerica
+        int num; //variable numerica entera num
         if(index < collection.length && index>= 0)//Si el numero es menor que la coleccion
         {
-            num = collection[index];//num tiene el numero de la collecion
+            num = collection[index];//Metemos a num el numero de la collecion
         }
         else
         {
@@ -111,11 +111,11 @@ public class ArrayListInt
      * Metodo que reemplaza el elemento en la posición index con el valor de element. 
      * Si el índice no es válido, no hace nada.
      */
-    public void set(int index, int elemento)
+    public void set(int index, int element)
     {
         if(index < collection.length && index>= 0)
         {
-            collection[index] = elemento;
+            collection[index] = element;
         }
     }
 
@@ -123,31 +123,25 @@ public class ArrayListInt
      * Metodo que devuelve el indice en el que aparece la primera ocurrencia del elemento especificado o
      * -1 en caso de que la colección no contenga el elemento especificado.
      */
-    public int indexOf(int elemento)
+    public int indexOf(int element)
     {
-        int index = 0;
-        //recorrido en busca del elemento en caso de que exita
-        if(contains(elemento))
+        int index = -1;
+        //Recorremos en busca del elemento si existe
+        if(contains(element))
         {
             boolean contains = false;
-            //recorrido en busca del elemento
+            //Recorremos en busca del elemento
             for (int i = 0; i < collection.length && !contains; i++ )
             {
-                if (collection[i]== elemento)
+                if (collection[i]== element)
                 {
-                    //marcado como encontrado y guardado del indice
+                     //Cuando lo encuentre true y guardamos el indice
                     contains = true;
                     index = i;
                 }
             }
 
         }
-        //en caso de que no exista el elemento
-        else
-        {
-            index = -1;
-        }
-
         return index;
     }
 
@@ -176,26 +170,25 @@ public class ArrayListInt
     {
         int num = -1;
         int[] newList = new int[collection.length - 1]; 
-        //indice valido
         if(index < collection.length && index >= 0)
         {
-            //guardado de elementos en las posiciones anteriores a la indicada
+            //Guardamos los elementos en las posiciones indicadas a las anteriores
             for (int i = 0;   i != index; i++ )
             {
                 newList[i] = collection[i]; 
             }
 
-            //guardado para el retorno del elemento que se borra
-            //no es guardado en la nueva lista
+            //guardamos el elemento que se borra pero no lo añadimos a la nueva lista
+            
             num = collection[index];
 
-            //agregado de elementos despues de la posicion indicada
+             //Metemos el nuevo elemento despues de la posicion indicada
             for (int i = index+1; i < collection.length;  i++ )
             {
                 newList[i-1] = collection[i];
             }
 
-            //guardado de la nueva lista
+             //Guardamos la lista nueva
             collection = newList;
 
         }
