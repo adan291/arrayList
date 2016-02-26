@@ -65,11 +65,27 @@ public class ArrayListInt
     }
 
     /**
-     * vacia la coleccion
+     * Metodo que vacia la coleccion
      */
     public void clear()
     {
         collection = new int[0];
+    }
+    
+    /**
+     * Metodo que devuelve true si la colección contiene ese elemento.
+     */
+    public boolean contains(int  elemento)
+    { boolean contains = false;
+        //recorrido en busca del elemento
+        for (int index = 0; index < collection.length; index++ )
+        {
+            if (collection[index]==  elemento)
+            {
+                contains = true;
+            }
+        }
+        return contains;
     }
 
 }
