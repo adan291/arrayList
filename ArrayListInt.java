@@ -87,7 +87,8 @@ public class ArrayListInt
         }
         return contains;
     }
-     /**
+
+    /**
      * devuelve el elemento existente en la indice indicado.
      * -1 si la posicion no es correcta
      */
@@ -104,7 +105,8 @@ public class ArrayListInt
         }	
         return num;
     }
-      /**
+
+    /**
      * Metodo que reemplaza el elemento en la posición index con el valor de element. 
      * Si el índice no es válido, no hace nada.
      */
@@ -112,10 +114,11 @@ public class ArrayListInt
     {
         if(index < collection.length && index>= 0)
         {
-           collection[index] = elemento;
+            collection[index] = elemento;
         }
     }
-     /**
+
+    /**
      * Metodo que devuelve el indice en el que aparece la primera ocurrencia del elemento especificado o
      * -1 en caso de que la colección no contenga el elemento especificado.
      */
@@ -146,7 +149,7 @@ public class ArrayListInt
 
         return index;
     }
-    
+
     /**
      * Metodo que devuelve true si la lista no contiene elementos.
      */
@@ -154,19 +157,57 @@ public class ArrayListInt
     {
         //inicializamos como si tuvieramos elementos
         boolean isEmpty = false;
-        //sie esta vacio
+        //si esta vacio
         if(collection.length == 0)
         {
             isEmpty = true;
         }
         return isEmpty;
     }
-       /**
+
+    /**
      * Metodo que devuelve el número de elementos de la colección.
      */
     public int size()
     {
         return collection.length;
     }
+
+    /**
+     * Metodo que  elimina de la colección el elemento que ocupa la posición especificada y
+     * devuelve dicho elemento. 
+     * Si el valor de index no es válido, no hace nada y devuelve -1.
+     */
+    public int remove(int index)
+    {
+        int num = -1;
+        int[] newList = new int[collection.length - 1]; 
+        //indice valido
+        if(index < collection.length && index >= 0)
+        {
+            //guardado de elementos en las posiciones anteriores a la indicada
+            for (int i = 0;   i != index; i++ )
+            {
+                newList[i] = collection[i]; 
+            }
+
+            //guardado para el retorno del elemento que se borra
+            //no es guardado en la nueva lista
+            num = collection[index];
+
+            //agregado de elementos despues de la posicion indicada
+            for (int i = index+1; i < collection.length;  i++ )
+            {
+                newList[i-1] = collection[i];
+            }
+
+            //guardado de la nueva lista
+            collection = newList;
+
+        }
+       
+
+        return num;
+    }
 }
-}
+
