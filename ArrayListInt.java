@@ -42,6 +42,25 @@ public class ArrayListInt
      */
     public void addElementoPosicion (int index, int elemento)
     {
+        int[] newList = new int[collection.length + 1]; 
+        if(index < collection.length)
+        {
+            //guardado de elementos en las posiciones anteriores a la indicada
+            for (int i = 0;   i != index; i++ )
+            {
+                newList[i] = collection[i];
+            }
+            //insercion de nuevo elemento en la posicion indicada
+            newList[index] = elemento;
+            //agregado de elementos despues de la posicion indicada
+            for (int i = index; i < collection.length;  i++ )
+            {
+                newList[i  + 1] = collection[i];
+            }
+
+            //guardado de la nueva lista
+            collection = newList;
+        }
 
     }
 }
