@@ -20,7 +20,7 @@ public class ArrayListInt
     /**
      * Metodo añade un elemento a la colección al final de la misma.
      */
-    public void addElemento (int elemento)
+    public void add (int elemento)
     {
 
         //nueva lista creada
@@ -41,7 +41,7 @@ public class ArrayListInt
     /**
      * Metodo añade un elemento a la colección en la posición especificada por el parámetro.
      */
-    public void addElementoPosicion (int index, int elemento)
+    public void add (int index, int elemento)
     {
         int[] newList = new int[collection.length + 1]; 
         if(index < collection.length && index>= 0)
