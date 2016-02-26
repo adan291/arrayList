@@ -104,4 +104,15 @@ public class ArrayListInt
         }	
         return num;
     }
+      /**
+     * Metodo que reemplaza el elemento en la posición index con el valor de element. 
+     * Si el índice no es válido, no hace nada.
+     */
+    public void set(int index, int element)
+    {
+        if(index < collection.length && index>= 0)
+        {
+           collection[index] = element;
+        }
+    }
 }
