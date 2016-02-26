@@ -108,11 +108,42 @@ public class ArrayListInt
      * Metodo que reemplaza el elemento en la posición index con el valor de element. 
      * Si el índice no es válido, no hace nada.
      */
-    public void set(int index, int element)
+    public void set(int index, int elemento)
     {
         if(index < collection.length && index>= 0)
         {
-           collection[index] = element;
+           collection[index] = elemento;
         }
+    }
+     /**
+     * Metodo que devuelve el indice en el que aparece la primera ocurrencia del elemento especificado o
+     * -1 en caso de que la colección no contenga el elemento especificado.
+     */
+    public int indexOf(int elemento)
+    {
+        int index = 0;
+        //recorrido en busca del elemento en caso de que exita
+        if(contains(elemento))
+        {
+            boolean contains = false;
+            //recorrido en busca del elemento
+            for (int i = 0; i < collection.length && !contains; i++ )
+            {
+                if (collection[i]== elemento)
+                {
+                    //marcado como encontrado y guardado del indice
+                    contains = true;
+                    index = i;
+                }
+            }
+
+        }
+        //en caso de que no exista el elemento
+        else
+        {
+            index = -1;
+        }
+
+        return index;
     }
 }
