@@ -63,4 +63,13 @@ public class ArrayListInt
         }
 
     }
+
+    /**
+     * vacia la coleccion
+     */
+    public void clear()
+    {
+        collection = new int[0];
+    }
+
 }
