@@ -156,14 +156,7 @@ public class ArrayListInt
      */
     public boolean isEmpty()
     {
-        //inicializamos como si tuvieramos elementos
-        boolean isEmpty = false;
-        //si esta vacio
-        if(collection.length == 0)
-        {
-            isEmpty = true;
-        }
-        return isEmpty;
+        return collection.length==0;
     }
 
     /**
