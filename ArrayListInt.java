@@ -13,8 +13,8 @@ public class ArrayListInt
      * Constructor for objects of class ArrayListInt
      */
     public ArrayListInt()
-    {
-
+    {   
+        collection = new int [0]; // Se inicializa con 0 elementos para ahorrar espacio.
     }
 
     /**
@@ -22,6 +22,7 @@ public class ArrayListInt
      */
     public void addElemento (int elemento)
     {
+
         //nueva lista creada
         int[] newList = new int[collection.length + 1];
         //copiado de lista antigua en la nueva
@@ -205,7 +206,6 @@ public class ArrayListInt
             collection = newList;
 
         }
-       
 
         return num;
     }
